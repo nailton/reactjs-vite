@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    container_name: react-vite
+    image: node:lts
+    working_dir: /var/www/html/frontend/
+    entrypoint: /bin/bash
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./frontend/:/var/www/html/frontend
+    restart: always    
+    tty: true
+    
